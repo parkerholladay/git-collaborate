@@ -24,6 +24,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -fy wine64
+          [ -z "$(which wine64)" ] && sudo ln -s $(which wine) $(which wine)64
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
